@@ -19,36 +19,35 @@ inline void fast_io()
 
 void Solve()
 {
-    int n, k;
-    cin >> n >> k;
+    int n, x;
+    cin >> n >> x;
     vector<int> arr(n);
+
+    // gas stations :
 
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
+    int initial = 0;
+    int ans = INT_MIN;
+    for (int i = 1; i < n; i++)
+    {
+        int fuel = arr[i] - arr[i - 1];
+        ans = max(ans, fuel);
+    }
 
-    if (k == 1)
-    {
-        if (is_sorted(arr.begin(), arr.end()))
-        {
-            cout << "YES"
-                 << "\n";
-            return;
-        }
-        else
-        {
-            cout << "NO"
-                 << "\n";
-            return;
-        }
-    }
-    else
-    {
-        cout << "YES"
-             << "\n";
-        return;
-    }
+    // check fuel needed for  0 -> first gas station also :
+
+    ans = max(ans, arr[0] - 0);
+
+    // check the fuel needed of dest and its previous gas st :
+
+    ans = max(ans, 2 * (x - arr[n - 1]));
+
+    cout
+        << ans << endl;
+    return;
 }
 
 int32_t main()
