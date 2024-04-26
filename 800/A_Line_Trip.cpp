@@ -29,11 +29,12 @@ void Solve()
     {
         cin >> arr[i];
     }
-    int initial = 0;
+
     int ans = INT_MIN;
-    for (int i = 1; i < n; i++)
+
+    for (int i = 0; i < n - 1; i++)
     {
-        int fuel = arr[i] - arr[i - 1];
+        int fuel = arr[i + 1] - arr[i];
         ans = max(ans, fuel);
     }
 
