@@ -32,10 +32,14 @@ void Solve()
         if (str[i] == '.')
             dot++;
 
-        // conseqetive 3 dots = filled water in 3 cells and one water
-        // can be  placed  in any other empty cell. so it will fill all
-        // empty cells.
-        // w.w.-> www.-> w.ww -> wwww
+        /*
+
+        conseqetive 3 dots = filled water in 3 cells and one water
+        can be  placed  in any other empty cell. so it will fill all
+        empty cells.
+        w.w.-> www.-> w.ww -> wwww
+
+        */
 
         if (i > 0 && i < n)
         {
