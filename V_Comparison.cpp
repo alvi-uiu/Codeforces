@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    int a, b;
+    char c;
+    cin >> a >> c >> b;
+    if (c == '>')
+        a > b ? cout << "Right" : cout << "Wrong";
+    else if (c == '<')
+        a < b ? cout << "Right" : cout << "Wrong";
+    else if (c == '=')
+        a == b ? cout << "Right" : cout << "Wrong";
+    return 0;
+}
