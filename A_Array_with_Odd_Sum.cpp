@@ -30,14 +30,23 @@ inline void solve()
     int n;
     cin >> n;
     int sum = 0;
+    bool hasOdd = false, hasEven = false;
     for (int i = 0; i < n; i++)
     {
         int x;
         cin >> x;
+        if (x % 2 != 0)
+            hasOdd = true;
+        else
+            hasEven = true;
         sum += x;
     }
     if (sum % 2 != 0)
         cout << "YES" << "\n";
+
+    else if (hasEven && hasOdd)
+        cout << "YES" << "\n";
+
     else
         cout << "NO" << "\n";
 }
